@@ -20,7 +20,6 @@ import java.util.ArrayList;
 public class AddUserActivity extends AppCompatActivity implements TextWatcher {
 
     TextInputLayout input_name, input_age, input_address;
-    Button button_data;
     Button button2;
     String name, address, age;
     Intent intent;
@@ -30,8 +29,6 @@ public class AddUserActivity extends AppCompatActivity implements TextWatcher {
     ArrayList<User> mContacts = UserData.saveList;
 
     Toolbar toolbar;
-
-    static ArrayList<User> dataList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
