@@ -111,8 +111,8 @@ public class AddUserActivity extends AppCompatActivity implements TextWatcher {
                     finish();
                 }else{
                     Intent intent1 = new Intent(AddUserActivity.this, DetailActivity.class);
-                    intent1.putExtra("mContact", mContacts.get(daftar));
-                    intent1.putExtra("position", daftar);
+//                    intent1.putExtra("mContact", mContacts.get(daftar));
+                    intent1.putExtra("mContact", daftar);
                     startActivity(intent1);
                     finish();
                 }
