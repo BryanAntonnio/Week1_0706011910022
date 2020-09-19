@@ -65,8 +65,6 @@ public class AddUserActivity extends AppCompatActivity implements TextWatcher {
             TextInputLayout set_age = (TextInputLayout) findViewById(R.id.input_age);
             set_age.getEditText().setText(mContacts.get(daftar).getAge());
             String txt = " years old";
-//            age = age.replaceAll("\\D+","");
-//            input_age.setText(age);
 
             TextInputLayout set_address = (TextInputLayout) findViewById(R.id.input_address);
             set_address.getEditText().setText(mContacts.get(daftar).getAddress());

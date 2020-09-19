@@ -22,7 +22,6 @@ import com.uc.week1_0706011910022.model.User;
 import com.uc.week1_0706011910022.model.UserData;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -30,9 +29,6 @@ public class DetailActivity extends AppCompatActivity {
     Intent intent;
     Button button_delete;
     Button button_edit;
-    RecyclerView mRecyclerView;
-    RecyclerView.Adapter mAdapter;
-    User user;
     int con;
     Toolbar toolbar;
 
@@ -75,7 +71,6 @@ public class DetailActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 alertMessage();
             }
         });
@@ -105,18 +100,11 @@ public class DetailActivity extends AppCompatActivity {
                 switch (which) {
                     case DialogInterface.BUTTON_POSITIVE:
 
-//                        Iterator<User> iter = UserData.saveList.iterator();
-//                        while (iter.hasNext()) {
-//                            User user = iter.next();
-//                            if (user.name.equals(mContacts.get(con).getName())) {
-//                                iter.remove();
-//                            }
-//                        }
 
                         mContacts.remove(con);
                         Log.d("test", String.valueOf(con));
 
-                        // Yes button clicked
+                        // Yes
                         Toast.makeText(DetailActivity.this, "Delete Success",
                                 Toast.LENGTH_LONG).show();
 
@@ -135,8 +123,8 @@ public class DetailActivity extends AppCompatActivity {
 
 
                     case DialogInterface.BUTTON_NEGATIVE:
-                        // No button clicked
-                        // do nothing
+
+                        //No
                         dialog.dismiss();
                 }
             }

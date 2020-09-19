@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnNoteL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        no_data = findViewById(R.id.nodata);
 
         btn_add = findViewById(R.id.addUser);
 
@@ -56,11 +57,11 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnNoteL
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
-//        if (mContacts.isEmpty()){
-//            no_data.setText("No Data");
-//        }else{
-//            no_data.setText("");
-//        }
+        if (mContacts.isEmpty()){
+            no_data.setText("No Data");
+        }else{
+            no_data.setText("");
+        }
     }
     @Override
     public void OnNoteClick(int position) {
