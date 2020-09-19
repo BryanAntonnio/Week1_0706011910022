@@ -83,7 +83,7 @@ public class DetailActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent (DetailActivity.this, AddUserActivity.class);
-                intent.putExtra("mContact", "value");
+                intent.putExtra("mContact", mContacts.get(con));
                 intent.putExtra("position", con);
                 startActivity(intent);
                 finish();

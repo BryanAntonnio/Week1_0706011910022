@@ -26,6 +26,7 @@ public class AddUserActivity extends AppCompatActivity implements TextWatcher {
     Intent intent2;
     String con;
     int daftar;
+    User user;
     ArrayList<User> mContacts = UserData.saveList;
 
     Toolbar toolbar;
@@ -48,12 +49,12 @@ public class AddUserActivity extends AppCompatActivity implements TextWatcher {
         final Loading loading = new Loading(AddUserActivity.this);
 
         intent = getIntent();
-        con = intent.getStringExtra("mContact");
+        user = intent.getParcelableExtra("mContact");
 
         intent2 = getIntent();
         daftar = intent2.getIntExtra("position", 0);
 
-        if (con.equalsIgnoreCase("main")) {
+        if (user == null) {
             toolbar.setTitle("Add User");
             button2.setText("Save Data");
         } else {
@@ -73,7 +74,7 @@ public class AddUserActivity extends AppCompatActivity implements TextWatcher {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (con.equalsIgnoreCase("main")) {
+                if (user == null) {
                     final User contact = new User(name, address, age);
 
                     UserData.saveList.add(contact);
@@ -104,12 +105,14 @@ public class AddUserActivity extends AppCompatActivity implements TextWatcher {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(con.equalsIgnoreCase("main")){
+                if(user == null){
                     Intent intent1 = new Intent(AddUserActivity.this, MainActivity.class);
                     startActivity(intent1);
                     finish();
                 }else{
                     Intent intent1 = new Intent(AddUserActivity.this, DetailActivity.class);
+                    intent1.putExtra("mContact", mContacts.get(daftar));
+                    intent1.putExtra("position", daftar);
                     startActivity(intent1);
                     finish();
                 }
