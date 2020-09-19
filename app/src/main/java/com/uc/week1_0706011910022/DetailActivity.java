@@ -144,6 +144,8 @@ public class DetailActivity extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Are you sure to delete " + mContacts.get(con).getName() + " data?")
+                .setIcon(R.drawable.button_selector)
+                .setTitle("Confirmation")
                 .setPositiveButton("Yes", dialogClickListener)
                 .setNegativeButton("No", dialogClickListener).show();
     }
